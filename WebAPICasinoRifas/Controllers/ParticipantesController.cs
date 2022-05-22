@@ -18,8 +18,8 @@ namespace WebAPICasinoRifas.Controllers
             this.mapper = mapper;
         }
 
-        [HttpPost("{CrearParticipante}")]
-        public async Task<ActionResult> Post([FromBody] ParticipantesDTO partisDTO)
+        [HttpPost("CrearParticipante")]
+        public async Task<ActionResult> Post(ParticipanteCreacionDTO partisDTO)
         {
             var parti = mapper.Map<Participante>(partisDTO);
 

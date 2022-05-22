@@ -12,8 +12,8 @@ using WebAPICasinoRifas;
 namespace WebAPICasinoRifas.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220521053957_SistemaUsuarios")]
-    partial class SistemaUsuarios
+    [Migration("20220522063250_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

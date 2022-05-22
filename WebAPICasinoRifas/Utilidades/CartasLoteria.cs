@@ -1,0 +1,65 @@
+﻿using WebAPICasinoRifas.Entitys;
+
+namespace WebAPICasinoRifas.Utilidades
+{
+    public class CartasLoteria
+    {
+       public List<CartaLote> mazo = new List<CartaLote>()
+       {
+            new CartaLote(1,"El_Gallo"),
+            new CartaLote(2,"El_Diablo"),
+            new CartaLote(3,"La_Dama"),
+            new CartaLote(4,"El_Catrín"),
+            new CartaLote(5,"El_Paraguas"),
+            new CartaLote(6,"La_Sirena"),
+            new CartaLote(7,"La_Escalera"),
+            new CartaLote(8,"La_Botella"),
+            new CartaLote(9,"El_Barril"),
+            new CartaLote(10,"El_Árbol"),
+            new CartaLote(11,"El_Melón"),
+            new CartaLote(12,"El_Valiente"),
+            new CartaLote(13,"El_Gorrito"),
+            new CartaLote(14,"La_Muerte"),
+            new CartaLote(15,"La_Pera"),
+            new CartaLote(16,"La_Bandera"),
+            new CartaLote(17,"El_Bandolón"),
+            new CartaLote(18,"El_Violoncello"),
+            new CartaLote(19,"La_Garza"),
+            new CartaLote(20,"El_Pájaro"),
+            new CartaLote(21,"La_Mano"),
+            new CartaLote(22,"La_Bota"),
+            new CartaLote(23,"La_Luna"),
+            new CartaLote(24,"El_Cotorro"),
+            new CartaLote(25,"El_Borracho"),
+            new CartaLote(26,"El_Negrito"),
+            new CartaLote(27,"El_Corazón"),
+            new CartaLote(28,"La_Sandía"),
+            new CartaLote(29,"El_Tambor"),
+            new CartaLote(30,"El_Camarón"),
+            new CartaLote(31,"Las_Jaras"),
+            new CartaLote(32,"El_Músico"),
+            new CartaLote(33,"La_Araña"),
+            new CartaLote(34,"El_Soldado"),
+            new CartaLote(35,"La_Estrella"),
+            new CartaLote(36,"El_Cazo"),
+            new CartaLote(37,"El_Mundo"),
+            new CartaLote(38,"El_Apache"),
+            new CartaLote(39,"El_Nopal"),
+            new CartaLote(40,"El_Alacrán"),
+            new CartaLote(41,"La_Rosa"),
+            new CartaLote(42,"La_Calavera"),
+            new CartaLote(43,"La_Campana"),
+            new CartaLote(44,"El_Cantarito"),
+            new CartaLote(45,"El_Venado"),
+            new CartaLote(46,"El_Sol"),
+            new CartaLote(47,"La_Corona"),
+            new CartaLote(48,"La_Chalupa"),
+            new CartaLote(49,"El_Pino"),
+            new CartaLote(50,"El_Pescado"),
+            new CartaLote(51,"La_Palma"),
+            new CartaLote(52,"La_Maceta"),
+            new CartaLote(53,"El_Arpa"),
+            new CartaLote(54,"La_Rana")
+       };
+    }
+}

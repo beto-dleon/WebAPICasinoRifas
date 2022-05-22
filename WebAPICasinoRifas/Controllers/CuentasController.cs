@@ -95,7 +95,7 @@ namespace WebAPICasinoRifas.Controllers
             };
         }
 
-       // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdministrador")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdministrador")]
         [HttpPost("HacerAdministrador")]
         public async Task<ActionResult> HacerAdmin(EditarAdministradorDTO editarAdministradorDTO)
         {
@@ -104,7 +104,7 @@ namespace WebAPICasinoRifas.Controllers
             return NoContent();
         }
 
-        // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdministrador")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdministrador")]
         [HttpPost("QuitarAdministrador")]
         public async Task<ActionResult> QuitarAdmin(EditarAdministradorDTO editarAdministradorDTO)
         {
