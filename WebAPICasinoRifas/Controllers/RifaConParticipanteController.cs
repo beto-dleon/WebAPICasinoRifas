@@ -51,21 +51,21 @@ namespace WebAPICasinoRifas.Controllers
 
             var datosParticipante = await dbContext.Participantes.Where(x => x.Id == ganador.ParticipanteId).FirstOrDefaultAsync();
 
-            var loteria = new CartasLoteria();
-            var list = loteria.mazo.ElementAt(ganador.NumeroLoteria);
+            var list = CartasLoteria.mazo;
             
 
             var boletoGanador = new
             {
                 nombre = datosParticipante.Nombre,
                 numero = ganador.NumeroLoteria,
-                Carta = loteria.mazo.ElementAt(ganador.NumeroLoteria)
+                Carta = list.ElementAt(ganador.NumeroLoteria-1)
             };
 
             return boletoGanador;
         }
 
         [HttpPost("RegistrarParticipacion")]
+        [AllowAnonymous]
         public async Task<ActionResult> Post( RifaConParticipanteCreacionDTO rcpDto)
         {
             var mismoNum = await dbContext.RifasConParticipantes.AnyAsync(x => x.NumeroLoteria == rcpDto.NumeroLoteria 

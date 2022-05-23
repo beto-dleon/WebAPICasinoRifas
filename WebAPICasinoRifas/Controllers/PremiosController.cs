@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPICasinoRifas.DTOs;
@@ -57,6 +58,39 @@ namespace WebAPICasinoRifas.Controllers
             }
 
             premioDB = mapper.Map(premioCreacionDTO, premioDB);
+
+            await dbContext.SaveChangesAsync();
+            return NoContent();
+
+        }
+
+        [HttpPatch("{id:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdministrador")]
+        public async Task<ActionResult> Patch(int id, JsonPatchDocument<PremioPatchDTO> patchDocument)
+        {
+            if( patchDocument == null)
+            {
+                return BadRequest();
+            }
+            var premioDb = await dbContext.Premios.FirstOrDefaultAsync(x => x.Id == id);
+
+            if(premioDb == null)
+            {
+                return NotFound();
+            }
+
+            var premioDTO = mapper.Map<PremioPatchDTO>(premioDb);
+
+            patchDocument.ApplyTo(premioDTO, ModelState);
+
+            var esValido = TryValidateModel(premioDTO);
+
+            if (!esValido)
+            {
+                return BadRequest(ModelState);
+            }
+
+            mapper.Map(premioDTO, premioDb);
 
             await dbContext.SaveChangesAsync();
             return NoContent();

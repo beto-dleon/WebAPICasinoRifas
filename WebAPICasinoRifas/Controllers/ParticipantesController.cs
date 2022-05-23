@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using WebAPICasinoRifas.DTOs;
 using WebAPICasinoRifas.Entitys;
 
@@ -7,6 +10,7 @@ namespace WebAPICasinoRifas.Controllers
 {
     [ApiController]
     [Route("api/participantes")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ParticipantesController: ControllerBase
     {
         private readonly ApplicationDbContext dbContext;

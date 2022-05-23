@@ -14,7 +14,7 @@ namespace WebAPICasinoRifas.Utilidades
             CreateMap<RifaCreacionDTO, Rifa>();
             
             CreateMap<Rifa, GetRifaDTO>().ForMember(premioDTO => premioDTO.Premios, options => options.MapFrom(MapearListaPremios));
-
+            CreateMap<PremioPatchDTO, Premio>().ReverseMap();
         }
 
         private List<Premio> MapearListaPremios(Rifa rifa, GetRifaDTO getRifaDTO)

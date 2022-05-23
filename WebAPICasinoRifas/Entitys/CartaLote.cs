@@ -2,13 +2,13 @@
 {
     public class CartaLote
     {
-        int Id { get; set; }
-        string nombre { get; set; }
+        public int Id { get; set; }
+        public string nombre { get; set; }
 
-        public CartaLote(int id, string nombre)
-        {
-            this.Id = id;
-            this.nombre = nombre;
-        }
+        //public CartaLote(int id, string nombre)
+        //{
+        //    this.Id = id;
+        //    this.nombre = nombre;
+        //}
     }
 }
